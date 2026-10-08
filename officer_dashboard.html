@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Officer Dashboard</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background: url("./assets/mpose.jpg") no-repeat center center fixed;
+        background-size: cover;
+      }
+
+      .container {
+        max-width: 600px;
+        margin-top: 50px;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        padding: 20px;
+        border-radius: 10px;
+        color: white;
+      }
+
+      .card {
+        background: rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(5px);
+        padding: 10px;
+        border-radius: 10px;
+        margin-top: 10px;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="text-center">Officer Dashboard</h2>
+
+      <p><strong>Name:</strong> <span id="officerName"></span></p>
+      <p><strong>Badge Number:</strong> <span id="badgeNumber"></span></p>
+      <p><strong>Email:</strong> <span id="email"></span></p>
+
+      <h3 class="mt-4">Allocated Cases</h3>
+      <div id="allocatedCases"></div>
+
+      <button id="logout" class="btn btn-danger w-100 mt-3">Logout</button>
+    </div>
+
+    <script>
+      const officerData = JSON.parse(localStorage.getItem("officerLoggedIn"));
+
+      if (!officerData) {
+        alert("Unauthorized access! Please login.");
+        window.location.href = "officer_login.html";
+      } else {
+        document.getElementById("officerName").textContent = officerData.name;
+        document.getElementById("badgeNumber").textContent = officerData.badgeNumber;
+        document.getElementById("email").textContent = officerData.email;
+        fetchAllocatedCases(officerData.id);
+      }
+
+      async function fetchAllocatedCases(officerId) {
+        try {
+          const allotmentsResponse = await fetch("http://localhost:3000/allotments");
+          const allotments = await allotmentsResponse.json();
+
+          const firsResponse = await fetch("http://localhost:3000/firs");
+          const firs = await firsResponse.json();
+
+          const usersResponse = await fetch("http://localhost:3000/users");
+          const users = await usersResponse.json();
+
+          const allocatedCases = allotments
+            .filter((allotment) => allotment.officerId === officerId)
+            .map((allotment) => firs.find((fir) => fir.id === allotment.firId));
+
+          const casesContainer = document.getElementById("allocatedCases");
+
+          if (allocatedCases.length === 0) {
+            casesContainer.innerHTML = "<p>No cases assigned yet.</p>";
+          } else {
+            allocatedCases.forEach((fir) => {
+              const user = users.find((user) => user.id === fir.userId);
+
+              const caseCard = document.createElement("div");
+              caseCard.classList.add("card");
+              caseCard.innerHTML = `
+                    <p><strong>Case Title:</strong> ${fir.title}</p>
+                    <p><strong>Description:</strong> ${fir.details}</p>
+                    <p><strong>Status:</strong> ${fir.status}</p>
+                    <hr>
+                    <h5>User Details</h5>
+                    <p><strong>Name:</strong> ${user ? user.fullName : "Unknown"}</p>
+                    <p><strong>Contact Number:</strong> ${user ? user.phone : "Not available"}</p>
+                    <p><strong>Address:</strong> ${user ? user.address : "Not available"}</p>
+                `;
+              casesContainer.appendChild(caseCard);
+            });
+          }
+        } catch (error) {
+          console.error("Error fetching cases:", error);
+        }
+      }
+
+      async function markFIRComplete(firId) {
+        const checkbox = document.getElementById(`completeFIR${firId}`);
+        const newStatus = checkbox.checked ? "Resolved" : "Pending";
+
+        try {
+          const response = await fetch(`http://localhost:3000/firs/${firId}`, {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ status: newStatus })
+          });
+
+          if (response.ok) {
+            alert(`FIR status updated to ${newStatus}.`);
+            location.reload();
+          } else {
+            throw new Error("Failed to update FIR status.");
+          }
+        } catch (error) {
+          console.error(error);
+          alert("Error updating FIR status.");
+        }
+      }
+
+      document.getElementById("logout").addEventListener("click", () => {
+        localStorage.removeItem("officerLoggedIn");
+        window.location.href = "./index.html";
+      });
+    </script>
+  </body>
+</html>

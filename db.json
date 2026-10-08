@@ -1,0 +1,129 @@
+{
+  "adminCode": "****",
+  "officerCode": "1111",
+  "firs": [
+    {
+      "id": "c880",
+      "userId": "1ed5",
+      "title": "cheating",
+      "location": "nagpur",
+      "details": "fraud in nagpur on tajbag location",
+      "status": "Pending",
+      "date": "2025-02-24"
+    },
+    {
+      "id": "e345",
+      "userId": "51da",
+      "title": "bike is stole ",
+      "location": "outside the sct mall",
+      "details": "approx 4 pm i park my bike outside the sct mall sangli and my bike color is black and gray my bike name is yama 100 and number plate is MH10AB0101",
+      "status": "Resolved",
+      "date": "2026-07-06"
+    },
+    {
+      "id": "f70f",
+      "userId": "630b",
+      "title": "bike stolen",
+      "location": "at post surt",
+      "details": "my bike yama  number GJ10AB2233  color is red and white and it stole ouside the inorbit mall ",
+      "status": "Resolved",
+      "date": "2026-09-28"
+    }
+  ],
+  "users": [
+    {
+      "id": "1ed5",
+      "fullName": "Ritesh Raut",
+      "email": "riteshraut2703@gmail.com",
+      "phone": "08999095605",
+      "address": "kuytyer",
+      "aadhar": "789456123012365",
+      "pan": "wef8787",
+      "username": "riteshraut2703",
+      "password": "123"
+    },
+    {
+      "id": "51da",
+      "fullName": "vishwajeet",
+      "email": "work.divyaranidas04@gmail.com",
+      "phone": "8141644630",
+      "address": "sangli maharastra",
+      "aadhar": "98765342245",
+      "pan": "8765432134",
+      "username": "vishu",
+      "password": "123"
+    },
+    {
+      "id": "630b",
+      "fullName": "vishwajeet shahikant jadhav",
+      "email": "vishwajeetjadhav505@gmail.com",
+      "phone": "9356772326",
+      "address": "at post yelavi",
+      "aadhar": "935677232656",
+      "pan": "akaslsdfadv",
+      "username": "vishu",
+      "password": "1234"
+    }
+  ],
+  "admins": [
+    {
+      "id": "a613",
+      "username": "vasu",
+      "password": "123",
+      "securityKey": 849798
+    }
+  ],
+  "officers": [
+    {
+      "id": "eb0b",
+      "name": "prashant kadam",
+      "badgeNumber": "IPS",
+      "email": "PK7777@GMAIL.COM",
+      "password": "123"
+    },
+    {
+      "id": "hhaa",
+      "name": "Shivraj jangam",
+      "badgeNumber": "DSP",
+      "email": "PK7777@GMAIL.COM",
+      "password": "1230"
+    }
+  ],
+  "allotments": [
+    {
+      "id": "8439",
+      "firId": "c880",
+      "officerId": "eb0b"
+    },
+    {
+      "id": "39c7",
+      "firId": "c880",
+      "officerId": "eb0b"
+    },
+    {
+      "id": "3d8a",
+      "firId": "e345",
+      "officerId": "eb0b"
+    },
+    {
+      "id": "823e",
+      "firId": "c880",
+      "officerId": "eb0b"
+    },
+    {
+      "id": "df94",
+      "firId": "c880",
+      "officerId": "eb0b"
+    },
+    {
+      "id": "6688",
+      "firId": "e345",
+      "officerId": "hhaa"
+    },
+    {
+      "id": "b2f4",
+      "firId": "c880",
+      "officerId": "hhaa"
+    }
+  ]
+}

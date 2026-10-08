@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>महाराष्ट्र पोलीस युनिट्स</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .asideSection {
+            margin: 50px auto;
+            width: 50%;
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .sectionHead {
+            font-size: 22px;
+            color: #333;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+            background-color: #fff;
+            cursor: pointer;
+        }
+
+        select:hover {
+            border-color: #007bff;
+        }
+
+        /* Mobile responsive */
+        @media screen and (max-width: 600px) {
+            .asideSection {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="asideSection">
+        <h3 class="sectionHead">जिल्हा / पोलीस आयुक्त</h3>
+        <div class="rightNavDropdown">
+            <select class="home-ds-select" onchange="openPoliceWebsite(this.value)">
+                <option value="" selected disabled>जिल्हा / पोलीस आयुक्तालय निवडा</option>
+                <option value="https://ahmednagardistpolice.gov.in/">अहमदनगर</option>
+                <option value="http://akolapolice.gov.in/">अकोला</option>
+                <option value="http://www.amravaticitypolice.gov.in/">अमरावती शहर</option>
+                <option value="http://amravatiruralpolice.gov.in/">अमरावती ग्रामीण</option>
+                <option value="http://aurangabadcitypolice.gov.in/">छत्रपती संभाजीनगर शहर</option>
+                <option value="https://mumbaipolice.gov.in/">मुंबई शहर</option>
+                <option value="https://wardhapolice.co.in/">वर्धा</option>
+                <option value="http://yavatmalpolice.gov.in/">यवतमाळ</option>
+            </select>
+        </div>
+    </div>
+
+    <script>
+        function openPoliceWebsite(url) {
+            if (url) {
+                window.location.href = url; // Opens selected website
+            }
+        }
+    </script>
+
+</body>
+</html>

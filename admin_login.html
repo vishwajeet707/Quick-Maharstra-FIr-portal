@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login</title>
+  <style>
+    /* General Reset */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Full-page Background Image */
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;  
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: url('https://www.corsicatech.com/wp-content/uploads/2024/01/cybersecurity-management-768x430-1.webp') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+      animation: fadeInBackground 3s ease-in-out forwards;
+    }
+
+    @keyframes fadeInBackground {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    /* Dark Overlay */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+      z-index: -1;
+    }
+
+    /* Container */
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      padding: 20px;
+    }
+
+    /* Card/Form Styling */
+    .card {
+      background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Form Title */
+    .title {
+      color: #007bff;
+      font-weight: bold;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    /* Form Fields */
+    .form-group {
+      margin-bottom: 15px;
+      text-align: left;
+    }
+
+    label {
+      font-size: 16px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #000000;
+      border-radius: 8px;
+      margin-top: 5px;
+      font-size: 18px;
+    }
+
+    input:focus {
+      border-color: #007bff;
+      outline: none;
+    }
+
+    /* Submit Button */
+    button {
+      padding: 12px;
+      background-color: #007bff;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 10px;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Links */
+    .forgot-password {
+      text-align: center;
+      font-size: 14px;
+      margin-top: 15px;
+    }
+
+    .forgot-password a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .forgot-password a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .card {
+        padding: 15px;
+        width: 90%;
+      }
+
+      .title {
+        font-size: 20px;
+      }
+
+      button {
+        padding: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="card">
+      <h2 class="title">Admin Login</h2>
+      <form id="adminLoginForm">
+        <div class="form-group">
+          <label for="loginUsername">Username</label>
+          <input type="text" id="loginUsername" required>
+        </div>
+
+        <div class="form-group">
+          <label for="loginPassword">Password</label>
+          <input type="password" id="loginPassword" required>
+        </div>
+
+        <div class="form-group">
+          <label for="loginSecurityKey">Security Key</label>
+          <input type="text" id="loginSecurityKey" required>
+        </div>
+
+        <button type="submit">Login</button>
+      </form>
+
+      <div class="forgot-password">
+        <p>Register for <a href="admin_register.html">Admin</a></p>
+        <p>Let's Go To <a href="index.html">Home</a></p>
+      </div>
+    </div> 
+  </div>
+
+  <script src="admin_login.js"></script>
+
+</body>
+</html>
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f4f6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      padding: 20px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 400px;
+      padding: 25px;
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .title {
+      text-align: center;
+      color: #007bff;
+      font-weight: bold;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-size: 16px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-top: 8px;
+      font-size: 14px;
+      color: #333;
+    }
+
+    input[type="text"]:focus,
+    input[type="password"]:focus {
+      border-color: #007bff;
+      outline: none;
+    }
+
+    button {
+      padding: 14px;
+      background-color: #007bff;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 10px;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .forgot-password {
+      text-align: center;
+      font-size: 14px;
+      margin-top: 15px;
+    }
+
+    .forgot-password a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .forgot-password a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .card {
+        padding: 15px;
+        width: 90%;
+      }
+
+      .title {
+        font-size: 20px;
+      }
+
+      button {
+        padding: 12px;
+      }
+    }
+    
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="card">
+    <h2 class="title">Admin Login</h2>
+    <form id="adminLoginForm">
+      <div class="form-group">
+        <label for="loginUsername">Username</label>
+        <input type="text" id="loginUsername" required>
+      </div>
+
+      <div class="form-group">
+        <label for="loginPassword">Password</label>
+        <input type="password" id="loginPassword" required>
+      </div>
+
+      <div class="form-group">
+        <label for="loginSecurityKey">Security Key</label>
+        <input type="text" id="loginSecurityKey" required>
+      </div>
+
+      <button type="submit">Login</button>
+    </form>
+
+    <div class="forgot-password">
+      <p>Register for <a href="./admin_register.html">Admin</a></p>
+      <p>Let's Go To <a href="index.html" >Home</a></p>
+    </div>
+  </div> 
+</div>
+
+<script src="admin_login.js"></script>
+
+</body>
+</html>
+ -->

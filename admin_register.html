@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Registration</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url("https://www.corsicatech.com/wp-content/uploads/2024/01/cybersecurity-management-768x430-1.webp"); /* Set your background image */
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-attachment: fixed;
+      animation: fadeInBackground 3s ease-in-out forwards;
+      height: 50px
+    }
+
+    @keyframes fadeInBackground {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100vh;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.5); /* Semi-transparent background */
+      backdrop-filter: blur(10px); /* Glass effect */
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 400px;
+      text-align: left;
+    }
+
+    .title {
+      margin-bottom: 20px;
+      font-size: 24px;
+      font-weight: bold;
+      color: #01346b;
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 14px;
+      color: #080808;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      font-size: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-radius: 4px;
+      margin-top: 5px;
+      background: rgba(255, 255, 255, 0.3);
+      color: #000000;
+      box-sizing: border-box;
+    }
+
+    .form-group input:focus {
+      border-color: #007BFF;
+      outline: none;
+      background: rgba(255, 255, 255, 0.5);
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      color: #fff;
+      background-color: #007BFF;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .forgot-link {
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .forgot-link a {
+      color: #002b86;
+      text-decoration: none;
+    }
+
+    .forgot-link a:hover {
+      text-decoration: underline;
+    }
+
+    .success-msg {
+      color: green;
+      font-size: 14px;
+      margin-top: 15px;
+    }
+
+    .error-msg {
+      color: red;
+      font-size: 14px;
+      margin-top: 15px;
+    }
+
+    header {
+      background-color: rgba(160, 5, 82, 0.8);
+      color: white;
+      padding: 15px 20px;
+    }
+
+    header .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    header nav {
+      margin-top: 10px;
+    }
+
+    header nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: 20px;
+    }
+
+    .header nav ul li {
+      display: inline;
+    }
+
+    header nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    header nav ul li a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">FIR Portal</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="card">
+      <h2 class="title">Admin Registration</h2>
+      <form id="adminRegisterForm">
+        <div class="form-group">
+          <label for="regUsername">Username</label>
+          <input type="text" id="regUsername" required>
+        </div>
+
+        <div class="form-group">
+          <label for="regPassword">Password</label>
+          <input type="password" id="regPassword" required>
+        </div>
+
+        <div class="form-group">
+          <label for="confirmPassword">Confirm Password</label>
+          <input type="password" id="confirmPassword" required>
+        </div>
+
+        <button type="submit">Register</button>
+
+        <div class="forgot-link">
+          <p>Login for ADMIN <a href="./admin_login.html">Login for Admin</a></p>
+        </div>
+
+        <p id="successMsg" class="success-msg"></p>
+        <p id="errorMsg" class="error-msg"></p>
+      </form>
+    </div>
+  </div>
+
+  <script src="admin_register.js"></script>
+
+</body>
+</html>

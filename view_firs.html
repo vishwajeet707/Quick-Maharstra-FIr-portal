@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('https://i.pinimg.com/550x/a4/cb/8f/a4cb8f31f0375718e7ee6a994da9fbab.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Arial', sans-serif;
+    }
+
+    /* Overlay Effect */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.3); /* Slightly stronger overlay for readability */
+      z-index: -1;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding-top: 50px;
+    }
+
+    h1 {
+      color: #fff;
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: #333; /* Dark text for contrast */
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      padding: 20px;
+    }
+
+    .card-header {
+      font-weight: bold;
+      font-size: 1.5rem;
+      color: #333;
+      background: rgba(255, 255, 255, 0.3);
+      padding: 10px;
+      border-radius: 8px;
+      border-bottom: 2px solid #c2bcbc;
+    }
+
+    .card-body {
+      margin-top: 20px;
+    }
+
+    .list-group-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+      border: 1px solid #ddd;
+      margin-bottom: 10px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .list-group-item:hover {
+      background-color: #f8f9fa;
+      transform: scale(1.02);
+      transition: all 0.3s ease;
+    }
+
+    .badge {
+      font-size: 0.9rem;
+      padding: 8px 12px;
+      border-radius: 20px;
+    }
+
+    .form-check-input {
+      margin-right: 10px;
+    }
+
+    .badge-warning {
+      background-color: #f39c12;
+    }
+
+    .badge-success {
+      background-color: #2ecc71;
+    }
+
+    .badge-danger {
+      background-color: #e74c3c;
+    }
+
+    .btn {
+      font-weight: bold;
+      padding: 10px 20px;
+      border-radius: 5px;
+      background-color: #e74c3c;
+      border: none;
+      color: white;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #c0392b;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <h1 class="text-white">ALL FIRs & STATUS</h1>
+    
+    <div class="card mt-4">
+      <div class="card-header">
+        All Filed FIRs
+      </div>
+      <div class="card-body">
+        <ul id="firList" class="list-group">
+          <!-- FIR List will be dynamically populated here -->
+          <li class="list-group-item">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="firCheckbox1">
+              <label class="form-check-label" for="firCheckbox1">
+                FIR #1 - Theft Case <span class="badge badge-success">Filed</span>
+              </label>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="firCheckbox2">
+              <label class="form-check-label" for="firCheckbox2">
+                FIR #2 - Burglary Case <span class="badge badge-warning">Under Investigation</span>
+              </label>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="firCheckbox3">
+              <label class="form-check-label" for="firCheckbox3">
+                FIR #3 - Missing Person <span class="badge badge-danger">Closed</span>
+              </label>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <button id="logout" class="btn mt-3">Logout</button>
+  </div>
+
+  <script src="./view_firs.js"></script>
+</body>
+</html>
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('./assets/mpose.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    /* Overlay Effect */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.2); /* Light overlay */
+      z-index: -1;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+
+    /* Transparent Card */
+    .card {
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: #333; /* Dark text for contrast */
+    }
+
+    .card-header {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .btn {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <h1 class="text-white">ALL FIR & STATUS</h1>
+    
+    <div class="card mt-4">
+      <div class="card-header">
+        All Filed FIRs
+      </div>
+      <div class="card-body">
+        <ul id="firList" class="list-group"></ul>
+      </div>
+    </div>
+
+    <button id="logout" class="btn btn-danger mt-3">Logout</button>
+  </div>
+
+  <script src="./view_firs.js"></script>
+</body>
+</html>
+
+ -->

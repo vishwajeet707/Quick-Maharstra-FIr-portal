@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FIR Portal - Home</title>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick-theme.css"/>
+  
+  <style>
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url('./assets/hat.jfif'); 
+  background-size: cover; 
+  background-position: center; 
+  background-attachment: fixed; 
+  background-repeat: no-repeat;
+  animation: fadeInBackground 4s ease-in-out forwards;
+}
+
+@keyframes fadeInBackground {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+/* Header */
+header {
+  background-color: #C33764;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+nav ul.left-links {
+  margin-right: auto; /* Align left links to the left */
+}
+
+nav ul.right-links {
+  margin-left: auto; /* Align right links to the right */
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 0 10px; /* Optional: adds space between links */
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+
+
+    /* Carousel Styles */
+    .slider-container {
+      width: 100%;
+      margin: 20px auto;
+      overflow: hidden;
+    }
+
+    .img-carousel {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 400px;
+      overflow: hidden;
+    }
+
+    .img-carousel img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain; /* Ensures no cropping */
+    }
+
+    /* Hero Section */
+    .hero {
+      color: white;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 36px;
+    }
+
+    .hero p {
+      font-size: 18px;
+    }
+
+    .hero button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      background-color: white;
+      color: #c33764;
+      border-radius:10px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    /* .hero button:hover {
+      background-color: #535353;
+    } */
+
+    /* Footer */
+    footer {
+      background-color:#DD2476;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 105px;
+    }
+
+    footer a {
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Fix focus issue on hidden slides */
+    .slick-slide[aria-hidden="true"] {
+      pointer-events: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .hero h1 {
+        font-size: 28px;
+      }
+
+      .hero p {
+
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo"></div>
+    <nav>
+      <ul class="left-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="register.html">Register</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+      <ul class="right-links">
+        <li><a href="#" id="officer">Officer</a></li>
+        <li><a href="#" id="adminLink">Admin</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+
+
+  <!-- Image Slider -->
+  <div class="slider-container">
+    <div class="slider slide-show">
+      <div class="img-carousel"><img src="./assets/img1.jpg" alt="image1"></div>
+      <div class="img-carousel"><img src="./assets/img2.jpg" alt="image2"></div>
+      <div class="img-carousel"><img src="./assets/img3.jpg" alt="image3"></div>
+      <div class="img-carousel"><img src="./assets/img4.jpg" alt="image4"></div>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <h1>Welcome to Maharashtra FIR Portal</h1>
+    <p>Easily file and manage First Information Reports online.</p>
+    <button onclick="location.href='register.html'">Get Started</button>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 MH FIR Portal. All Rights Reserved.| 
+    <a href="./police_units.html">Police Units Website</a> | 
+    <a href="./site_map.html">Site Map</a> | 
+    <a href="./disclaimers.html">Disclaimers</a> | 
+    <a href="./faq.html">FAQ</a> | 
+    <a href="./contact.html">Contact Us</a>
+  </footer>
+  
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      $(".slide-show").slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 1000,
+        dots: true,
+        arrows: true,
+        focusOnSelect: true,
+      });
+
+      // Fix ARIA Hidden issue
+      $(".slide-show").on("afterChange", function (event, slick, currentSlide) {
+        $(".slick-slide").attr("tabindex", "-1"); 
+        $(".slick-current").attr("tabindex", "0");
+      });
+
+      // Admin Link Security
+      document.getElementById("adminLink").addEventListener("click", function(event) {
+        event.preventDefault();
+        let enteredCode = prompt("Enter the officers code:");
+        
+        fetch('db.json')
+          .then(response => response.json())
+          .then(data => {
+            const correctCode = data.adminCode; 
+
+            if (enteredCode === correctCode) {
+              window.location.href = "admin_register.html";
+            } else {
+              alert("Incorrect admin code. Access denied.");
+            }
+          })
+          .catch(error => {
+            console.error('Error fetching admin code:', error);
+            alert('Error accessing admin data.');
+          });
+      });
+
+
+      // officer Link Security
+      document.getElementById("officer").addEventListener("click", function(event) {
+        event.preventDefault();
+        let enteredCode = prompt("Enter the officer code:");
+        
+        fetch('db.json')
+          .then(response => response.json())
+          .then(data => {
+            const correctCode = data.officerCode; 
+
+            if (enteredCode === correctCode) {
+              window.location.href = "officer_register.html";
+            } else {
+              alert("Incorrect admin code. Access denied.");
+            }
+          })
+          .catch(error => {
+            console.error('Error fetching officer code:', error);
+            alert('Error accessing officer data.');
+          });
+      });
+
+    });
+  </script>
+
+</body>
+</html>

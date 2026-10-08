@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Login - FIR Portal</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-image: url("https://t3.ftcdn.net/jpg/03/99/24/82/360_F_399248286_Ogm0T8CFeauN4Hdn42FqWfsCE02dJBbX.jpg"); /* Change this to your image path */
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        animation: fadeInBackground 3s ease-in-out forwards;
+    }
+
+    @keyframes fadeInBackground {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+      .login-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 20px;
+      }
+
+      .card {
+        width: 100%;
+        max-width: 400px;
+        padding: 20px;
+        background: rgba(180, 176, 176, 0.4); /* Semi-transparent */
+        backdrop-filter: blur(8px); /* Blur background */
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        box-sizing: border-box;
+      }
+
+      .form-title {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #ffffff;
+        font-weight: bold;
+      }
+
+      .form-label {
+        font-weight: bold;
+        color: #ffffff;
+        margin-bottom: 8px;
+        display: block;
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 18px;
+        border-radius: 4px;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        background: rgba(255, 255, 255, 0.3);
+        color: #000000;
+        margin-bottom: 16px;
+        box-sizing: border-box;
+      }
+
+      .form-control:focus {
+        border-color: #007bff;
+        outline: none;
+        background: rgba(255, 255, 255, 0.5);
+      }
+
+      .btn-primary {
+        width: 100%;
+        padding: 12px;
+        background-color: #007bff;
+        color: white;
+        font-size: 16px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .btn-primary:hover {
+        background-color: #0056b3;
+      }
+
+      .footer {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 14px;
+        color: #000005;
+      }
+
+      .footer a {
+        color: #000000;
+        text-decoration: none;
+      }
+
+      .footer a:hover {
+        text-decoration: underline;
+      }
+
+      footer {
+        background-color: #dd2476;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+      }
+
+      footer a {
+        color: #ffffff;
+        text-decoration: none;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="card">
+        <h2 class="form-title">User Login</h2>
+        <form action="submit_login.php" method="post">
+          <!-- Username -->
+          <div>
+            <label for="username" class="form-label">Username</label>
+            <input
+              type="text"
+              class="form-control"
+              id="username"
+              name="username"
+              placeholder="Enter your username"
+              required
+            />
+          </div>
+
+          <!-- Password -->
+          <div>
+            <label for="password" class="form-label">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              name="password"
+              placeholder="Enter your password"
+              required
+            />
+          </div>
+
+          <!-- Submit Button -->
+          <div>
+            <button type="submit" class="btn-primary">Login</button>
+          </div>
+        </form>
+        <div class="footer">
+          Don't have an account? <a href="register.html">Register here</a>.
+        </div>
+      </div>
+    </div>
+    <script src="regi_log.js"></script>
+    <!-- Footer -->
+    <footer>
+      &copy; 2025 MH FIR Portal. All Rights Reserved. |
+      <a href="./police_units.html">Police Units Website</a> |
+      <a href="./site_map.html">Site Map</a> |
+      <a href="./disclaimers.html">Disclaimers</a> |
+      <a href="./faq.html">FAQ</a> |
+      <a href="./contact.html">Contact Us</a>
+    </footer>
+  </body>
+</html>
